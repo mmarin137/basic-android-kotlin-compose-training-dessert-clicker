@@ -13,7 +13,7 @@ class DessertViewModel: ViewModel() {
     val uiState: StateFlow<DessertUiState> = _uiState.asStateFlow()
 
     init {
-        val firstDessert = dessertList[_uiState.value.currentDessertIndex]
+        val firstDessert = dessertList.first()
        _uiState.value = DessertUiState(currentDessertPrice = firstDessert.price, currentDessertImageId = firstDessert.imageId)
     }
 
@@ -24,7 +24,6 @@ class DessertViewModel: ViewModel() {
                 dessertsSold = dessertsSold,
                 currentDessertImageId = dessertImageId,
                 currentDessertPrice = dessertPrice
-                currentDess
             )
         }
     }
